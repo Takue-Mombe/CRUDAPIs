@@ -1,0 +1,13 @@
+package org.qr_code_generator.crudsql;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class CrudsqlApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
