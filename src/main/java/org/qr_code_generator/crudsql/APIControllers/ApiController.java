@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+
 
 @RestController
 public class ApiController {
@@ -31,7 +30,6 @@ public class ApiController {
     @PostMapping(value = "/save")
     public String saveUser(User user){
 
-        user.setLastName("uaskakkjhqwj");
         userRepo.save(user);
         return "Save was a success";
     }
