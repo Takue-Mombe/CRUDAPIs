@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 
 @RestController
 public class ApiController {
@@ -28,6 +30,8 @@ public class ApiController {
 
     @PostMapping(value = "/save")
     public String saveUser(User user){
+
+        user.setLastName("uaskakkjhqwj");
         userRepo.save(user);
         return "Save was a success";
     }
@@ -39,9 +43,14 @@ public class ApiController {
         user1.setFirstName(user.getFirstName());
         user1.setOccupation(user.getOccupation());
         user1.setLastName(user.getLastName());
-
         userRepo.save(user1);
         return "updated...";
 
+    }
+    @DeleteMapping("delete/{id}")
+    public String deleteUser(User user){
+
+        userRepo.deleteById(user.getId());
+        return "deleted...";
     }
 }
